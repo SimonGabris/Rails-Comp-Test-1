@@ -1,3 +1,4 @@
+<body>
 <div class="failed_list_container">
   <h1>Failed Charges</h1>
   
@@ -7,7 +8,7 @@
       <th>Charge Amount</th>
       <th>Failed At</th>
     </tr>
-  
+
     <% @charges.each do |charge| %>
       <% if charge.refunded? %>
         <tr>
@@ -63,3 +64,4 @@
     <% end %>
   </table>
 </div>
+</body>
