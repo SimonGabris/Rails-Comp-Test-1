@@ -1,0 +1,19 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.failed_list_container {
+  table {
+    tr {
+      background-color: #FF0000;
+    }
+  }
+}
+.disputed_list_container {
+  table {
+    tr {
+      background-color: #FF5400;
+    }
+  }
+}
+.successful_list_container {
+}

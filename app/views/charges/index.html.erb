@@ -1,0 +1,65 @@
+<div class="failed_list_container">
+  <h1>Failed Charges</h1>
+  
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Charge Amount</th>
+      <th>Failed At</th>
+    </tr>
+  
+    <% @charges.each do |charge| %>
+      <% if charge.refunded? %>
+        <tr>
+          <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div class="disputed_list_container">
+  <h1>Disputed Charges</h1>
+
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Charge Amount</th>
+      <th>Disputed At</th>
+    </tr>
+
+    <% @charges.each do |charge| %>
+        <% if charge.disputed? %>
+            <tr>
+              <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+              <td><%= charge.amount %></td>
+              <td><%= charge.created %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div class="successful_list_container">
+  <h1>Successful Charges</h1>
+
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Charge Amount</th>
+      <th>Created At</th>
+    </tr>
+
+    <% @charges.each do |charge| %>
+        <% if charge.paid? %>
+            <tr>
+              <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+              <td><%= charge.amount %></td>
+              <td><%= charge.created %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
